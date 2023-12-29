@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('impressoes', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome');
+            $table->id()->unique();
+            $table->string('nome')->unique();;
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return "www.vivo.com.br";
+    return view('welcome');
 });
 
 Route::get('/impressoes', [ImpressoesController::class,"index"]);

@@ -23,6 +23,13 @@
         border-color: rgb(205, 205, 205);
         width: 33%;
         }
+        button {
+        color: black;
+        width: 100px;
+        height: 20px;
+        
+        }
+
 
 </style>
 </head>
@@ -37,7 +44,7 @@
             <th>Id</th>
             <th>Nome</th>
         </tr>
-
+        
         @foreach ($impressoes as $impressao)
         <tr>
         <td>{{$impressao['id']}}</td>
@@ -49,3 +56,6 @@
 
 </body>
 
+<a href="/criar-impressao">
+<button id='button' name='button'>CRIAR</button>
+</a>

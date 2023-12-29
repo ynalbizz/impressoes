@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Impressao;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use NunoMaduro\Collision\Exceptions\TestException;
 
 class ImpressoesController extends Controller
 {
@@ -12,7 +14,10 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-        return view('lista-impressoes', ["impressoes"=> Impressao::all('id','nome')]);
+       return view('lista-impressoes', ["impressoes"=> Impressao::all('id','nome')]);
+    
+        //$impressoes = DB::table('impressoes');
+        //return view('lista-impressoes', ["impressoes"=> $impressoes]);
     }
 
     /**
@@ -20,7 +25,9 @@ class ImpressoesController extends Controller
      */
     public function create()
     {
+        
         return view('criar-impressao');
+        
     }
 
     /**
@@ -28,7 +35,12 @@ class ImpressoesController extends Controller
      */
     public function store(Request $request)
     {
-        Impressao::create($request->all());
+       
+        DB::table('impressoes')->insertGetId([
+            'nome' => $request->input('nome')
+        ]);
+      
+        //DB::table('impressoes')->delete();
         return redirect('/impressoes');
     }
 
