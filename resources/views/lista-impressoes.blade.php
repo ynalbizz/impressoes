@@ -55,10 +55,10 @@
         </tr>
         
         @foreach ($impressoes as $impressao)
-        <tr>
-        <td>{{$impressao['id']}}</td>
-        <td>{{$impressao['nome']}}</td>
-        </tr>
+            <tr>
+                <td>{{$impressao['id']}}</td>
+                <td>{{$impressao['nome']}}</td>
+            </tr>
         @endforeach
   
     </table> 
