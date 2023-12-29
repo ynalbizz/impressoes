@@ -14,11 +14,9 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-        $impressoes = Impressao::all('id','nome');
-       //return view('lista-impressoes', ["impressoes"=> Impressao::all('id','nome')]);
-    
-        //return $impressoes;
-        return view('lista-impressoes', ["impressoes"=> $impressoes]);
+       
+       $impressoes = Impressao::query()->limit(5)->orderBy('id')->get(['id','nome']);
+        return view('lista-impressoes',['impressoes'=>$impressoes]);
     }
 
     /**
