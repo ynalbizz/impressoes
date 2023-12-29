@@ -14,6 +14,15 @@
             color: rgb(205, 205, 205);
             margin-left: 20px;
         }
+        table, th, td {
+            color: rgb(205, 205, 205);
+            border: 1px solid;
+        }
+        table {
+        border-collapse: collapse;
+        border-color: rgb(205, 205, 205);
+        width: 33%;
+        }
 
 </style>
 </head>
@@ -23,9 +32,20 @@
     <h1>Lista de impressões</h1>
     <p>Lista:</p>
 
-    @foreach ($impressoes as $impressao)
-        <h4> {{$impressao}} </h4>
-    @endforeach
+    <table>
+         <tr>
+            <th>Id</th>
+            <th>Nome</th>
+        </tr>
+
+        @foreach ($impressoes as $impressao)
+        <tr>
+        <td>{{$impressao['id']}}</td>
+        <td>{{$impressao['nome']}}</td>
+        </tr>
+        @endforeach
+  
+    </table> 
 
 </body>
 

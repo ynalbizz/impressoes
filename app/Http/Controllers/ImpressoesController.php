@@ -12,7 +12,7 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-        return view('lista-impressoes', ["impressoes"=> Impressao::all('id')]);
+        return view('lista-impressoes', ["impressoes"=> Impressao::all('id','nome')]);
     }
 
     /**
