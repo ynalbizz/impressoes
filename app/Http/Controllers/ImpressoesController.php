@@ -14,10 +14,11 @@ class ImpressoesController extends Controller
      */
     public function index()
     {
-       return view('lista-impressoes', ["impressoes"=> Impressao::all('id','nome')]);
+        $impressoes = Impressao::all('id','nome');
+       //return view('lista-impressoes', ["impressoes"=> Impressao::all('id','nome')]);
     
-        //$impressoes = DB::table('impressoes');
-        //return view('lista-impressoes', ["impressoes"=> $impressoes]);
+        //return $impressoes;
+        return view('lista-impressoes', ["impressoes"=> $impressoes]);
     }
 
     /**
