@@ -14,24 +14,33 @@
             color: rgb(205, 205, 205);
             margin-left: 20px;
         }
-        table, th, td {
-            color: rgb(205, 205, 205);
-            border: 1px solid;
-        }
         table {
-        border-collapse: collapse;
-        border-color: rgb(205, 205, 205);
         width: 33%;
+        border-collapse: collapse;
+        background-color: #333; /* Cor de fundo escura */
+        color: #fff; /* Cor do texto branca */
+        }
+        td, th {
+        border: 1px solid #555; /* Borda com cor mais clara */
+        padding: 8px;
+        text-align: left;
+        }
+        th {
+        background-color: #555; /* Cor de fundo mais escura para o cabeçalho */
+        }
+        tr:nth-child(odd) {
+        background-color: #444;
+        }
+        tr:hover {
+        background-color: #666;
         }
         button {
         color: black;
         width: 100px;
         height: 20px;
-        
         }
-
-
-</style>
+        
+    </style>
 </head>
 
 <body>

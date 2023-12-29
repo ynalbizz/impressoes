@@ -16,8 +16,9 @@ class ImpressoesController extends Controller
     {
         $impressoes = Impressao::all('id','nome');
        //return view('lista-impressoes', ["impressoes"=> Impressao::all('id','nome')]);
+       $DB = DB::table('impressoes')->where('id','<','6')->get(['id','nome']);
     
-        //return $impressoes;
+        return $DB;
         return view('lista-impressoes', ["impressoes"=> $impressoes]);
     }
 
