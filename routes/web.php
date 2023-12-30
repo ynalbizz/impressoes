@@ -22,3 +22,5 @@ Route::get('/impressoes', [ImpressoesController::class,"index"]);
 Route::get('/criar-impressao', [ImpressoesController::class,"create"]);
 
 Route::post('/impressoes', [ImpressoesController::class,"store"]);
+
+Route::get('/impressoes/{impressao}', [ImpressoesController::class,"show"]);

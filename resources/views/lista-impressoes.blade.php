@@ -52,12 +52,19 @@
          <tr>
             <th>Id</th>
             <th>Nome</th>
+            <th>Ações</th>
         </tr>
         
         @foreach ($impressoes as $impressao)
+        <a href="/impressoes/{{$impressao->id}}">
             <tr>
                 <td>{{$impressao['id']}}</td>
                 <td>{{$impressao['nome']}}</td>
+                <td>
+                    <a href="/impressoes/{{$impressao->id}}">
+                        Ver mais
+                    </a>
+                </td>
             </tr>
         @endforeach
   

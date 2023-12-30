@@ -15,7 +15,7 @@ class ImpressoesController extends Controller
     public function index()
     {
        //otimizado
-       $impressoes = Impressao::query()->limit(5)->orderBy('id')->get(['id','nome']);
+       $impressoes = Impressao::query()->limit(50)->orderBy('id')->get(['id','nome']);
         return view('lista-impressoes',['impressoes'=>$impressoes]);
     }
 
@@ -35,11 +35,10 @@ class ImpressoesController extends Controller
     public function store(Request $request)
     {
        
-        DB::table('impressoes')->insertGetId([
-            'nome' => $request->input('nome')
-        ]);
+        Impressao::create($request->all());
       
         //DB::table('impressoes')->delete();
+        //return $request;
         return redirect('/impressoes');
     }
 
@@ -48,7 +47,7 @@ class ImpressoesController extends Controller
      */
     public function show(Impressao $impressao)
     {
-        //
+        return view('impressao',['impressao'=>$impressao]);
     }
 
     /**
