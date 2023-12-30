@@ -15,8 +15,8 @@ class ImpressoesController extends Controller
     public function index()
     {
        //otimizado
-       $impressoes = Impressao::query()->limit(50)->orderBy('id')->get(['id','nome']);
-        return view('lista-impressoes',['impressoes'=>$impressoes]);
+        $impressoes = Impressao::paginate(columns:['id','nome']);
+        return view('lista-impressoes',['impressoes' => $impressoes]);
     }
 
     /**

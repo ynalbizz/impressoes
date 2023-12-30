@@ -64,6 +64,9 @@
                     <a href="/impressoes/{{$impressao->id}}">
                         Ver mais
                     </a>
+                    <a>
+                        Deletar
+                    </a>
                 </td>
             </tr>
         @endforeach
@@ -71,7 +74,7 @@
     </table> 
 
 </body>
-
+{{$impressoes->links()}}
 <a href="/criar-impressao">
 <button id='button' name='button'>CRIAR</button>
 </a>
