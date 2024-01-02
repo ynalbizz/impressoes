@@ -18,9 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/impressoes', [ImpressoesController::class,"index"]);
-
 Route::get('/criar-impressao', [ImpressoesController::class,"create"]);
+Route::get('/impressoes/{impressao}', [ImpressoesController::class,"show"]);
+Route::get('/impressoes/{impressao}/deletar', [ImpressoesController::class,"destroy"]);
+Route::get('/impressoes/{impressao}/editar', [ImpressoesController::class,"edit"]);
+
 
 Route::post('/impressoes', [ImpressoesController::class,"store"]);
-
-Route::get('/impressoes/{impressao}', [ImpressoesController::class,"show"]);
+Route::post('/impressoes/{impressao}', [ImpressoesController::class,"update"]);

@@ -15,7 +15,7 @@ class ImpressoesController extends Controller
     public function index()
     {
        //otimizado
-        $impressoes = Impressao::paginate(columns:['id','nome']);
+        $impressoes = Impressao::paginate(5, columns:['id','nome']);
         return view('lista-impressoes',['impressoes' => $impressoes]);
     }
 
@@ -37,8 +37,6 @@ class ImpressoesController extends Controller
        
         Impressao::create($request->all());
       
-        //DB::table('impressoes')->delete();
-        //return $request;
         return redirect('/impressoes');
     }
 
@@ -71,6 +69,7 @@ class ImpressoesController extends Controller
      */
     public function destroy(Impressao $impressao)
     {
-        //
+        Impressao::destroy($impressao);
+        return redirect('/impressoes');
     }
 }
