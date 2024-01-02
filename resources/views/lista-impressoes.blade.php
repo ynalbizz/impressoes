@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
+
 <head>
-
-<meta charset="utf-8">
-<link href="resources/css/app.css" rel="stylesheet" >
-<title>Lista de impressões</title>
-
+    <link href="resources/css/lista-impressoes.css" rel="stylesheet" >
+    <title>Lista de impressões</title>
 </head>
 
 <body>
@@ -43,4 +39,3 @@
 <a href="/criar-impressao">
 <button id='button' name='button'>CRIAR</button>
 </a>
-</html>
