@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/ajuda', function () {
     return view('welcome');
 });
 
+Route::get('/', [ImpressoesController::class,"index"]);
 Route::get('/impressoes', [ImpressoesController::class,"index"]);
 Route::get('/criar-impressao', [ImpressoesController::class,"create"]);
 Route::get('/impressoes/{impressao}', [ImpressoesController::class,"show"]);
